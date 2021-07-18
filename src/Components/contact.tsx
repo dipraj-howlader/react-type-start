@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface IProps{
     name:string,
@@ -7,8 +7,20 @@ interface IProps{
 }
 
 const contact = (props:IProps) => {
+    const [ contacts, setContacts] = useState("");
+
+
+
     return (
         <div className="card">
+            <div className="form"> 
+            <input
+            onChange={(e) => setContacts(e.target.value) }
+            type="text" name="name" placeholder="name" id="" />
+            </div>
+            <p>
+                the name is: {contacts}
+            </p>
             <p>
                 <strong>Name: {props.name}</strong>
             </p>
