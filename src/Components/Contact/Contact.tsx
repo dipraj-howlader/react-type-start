@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-interface Iprops {
-    name:string
+interface IProps{
+    name: string;
+    email?: string;
+    handleRemove: (email: string) => void
 }
 
-const Contact = ({name}:Iprops) => {
-
-    const [contacts, setContact] = useState("");
-
-
+const Contact = ({name, email = "N/A", handleRemove}: IProps)  => {
     return (
-        <div>
-            <h1>Form</h1>
-            <p>{name}</p>
-            <h1>{contacts}</h1>
-            <input onChange={(e) => setContact(e.target.value)} type="" name="name" placeholder="name" id="" />
-            
+        <div className="card">
+            <p>
+                <strong>Name:</strong> {name}
+            </p>
+            <p>
+                <strong>Email:</strong> {email}
+            </p>
+            <button onClick={() => handleRemove(email)}>Remove</button>
+        </div>
+    );
+};
+
+export const ContactDemo : React.FC<IProps> = ({name, email = "N/A"}) => {
+    return (
+        <div className="card">
+            <p>
+                <strong>Name</strong> {name}
+            </p>
+            <p>
+                <strong>Email</strong> {email}
+            </p>
         </div>
     );
 };
