@@ -1,10 +1,11 @@
 import React from 'react';
-import Contact from './Components/contact';
+import Contact from './Components/Contact/Contact';
 
 const App = () => {
   return (
     <div>
-      <Contact name="Dipraj" email="Diprajhowladerd"></Contact>
+      <h1>Be my HORNY</h1>
+      <Contact name="Dipraj Howlader"></Contact>
     </div>
   );
 };
