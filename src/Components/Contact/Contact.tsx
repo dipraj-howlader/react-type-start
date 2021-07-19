@@ -20,17 +20,4 @@ const Contact = ({name, email = "N/A", handleRemove}: IProps)  => {
     );
 };
 
-export const ContactDemo : React.FC<IProps> = ({name, email = "N/A"}) => {
-    return (
-        <div className="card">
-            <p>
-                <strong>Name</strong> {name}
-            </p>
-            <p>
-                <strong>Email</strong> {email}
-            </p>
-        </div>
-    );
-};
-
 export default Contact;
